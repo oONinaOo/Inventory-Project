@@ -1,9 +1,9 @@
 
 public abstract class Product {
-	private String name;
-	private int price;
+	public String name;
+	public Integer price;
 	
-	public Product(String name, int price){
+	public Product(String name, Integer price){
 		this.name = name;
 		this.price = price;
 	}

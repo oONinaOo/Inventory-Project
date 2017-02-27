@@ -1,11 +1,11 @@
 
 public class BookProduct extends Product{
 	
-	private int numOfTracks;
+	private int pageSizes;
 
-	public BookProduct(String name, int price, int numOfTracks){
+	public BookProduct(String name, Integer price, int pageSizes){
 		super(name, price);
-		this.numOfTracks = numOfTracks;
+		this.pageSizes = pageSizes;
 	}
 
 }

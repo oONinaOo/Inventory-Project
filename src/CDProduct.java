@@ -1,11 +1,11 @@
 
 public class CDProduct extends Product {
 	
-	private int pageSize;
+	private int numOfTracks;
 
-	public CDProduct(String name, int price, int pageSize){
+	public CDProduct(String name, Integer price, int numOfTracks){
 		super(name, price);
-		this.pageSize = pageSize;
+		this.numOfTracks = numOfTracks;
 	}
 
 }
