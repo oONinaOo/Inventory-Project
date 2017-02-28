@@ -25,7 +25,7 @@ public abstract class Store implements StoreCapable{
 		store(book);	
 	}
 	
-	protected abstract void storeProduct(Product product);
+	public abstract void storeProduct(Product product);
 	
 	public Product createProduct(String type, String name, int price, int size){
 		if(type == "CD"){
@@ -63,6 +63,7 @@ public abstract class Store implements StoreCapable{
 			Attr attr2 = doc.createAttribute("Price");
 			attr2.setValue(product.price.toString());
 			name.setAttributeNode(attr2);
+		
 
 			TransformerFactory transformerFactory = TransformerFactory.newInstance();
 			Transformer transformer = transformerFactory.newTransformer();
@@ -87,9 +88,9 @@ public abstract class Store implements StoreCapable{
 				Node nNode = nList.item(temp);
 				if (nNode.getNodeType() == Node.ELEMENT_NODE) {
 					Element eElement = (Element) nNode;
-                    			String instanceName = eElement.getAttribute("Name");
-                    			int instancePrice = Integer.parseInt(eElement.getAttribute("Price"));
-                    			productList.add(createProduct("CD", instanceName, instancePrice, 0));
+                    			String name = eElement.getAttribute("Name");
+                    			int price = Integer.parseInt(eElement.getAttribute("Price"));
+                    			productList.add(createProduct("CD", name, price, 0));
 				}
 			}
 		} catch (Exception e) {
